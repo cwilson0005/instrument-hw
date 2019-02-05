@@ -5,11 +5,15 @@ const MusicInfoView = require('./views/music_info_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
-  const instrumentDataModel = new InstrumentFamily(intrumentData);
+  const instrumentDataModel = new InstrumentFamily(instrumentData);
   instrumentDataModel.bindEvents();
 
   const selectInstrument = document.querySelector('#instrument-families');
   const instrumentDropdown = new SelectView(selectInstrument);
   instrumentDropdown.bindEvents();
+
+  const infoDiv = document.querySelector('div.display');
+  const musicInfoDisplay = new MusicInfoView(infoDiv);
+  musicInfoDisplay.bindEvents();
 
 });
